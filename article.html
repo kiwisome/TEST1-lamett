@@ -1,0 +1,339 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Article — LAMETT</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      :root {
+        --paper: #faf8f4;
+        --paper-2: #f6f3ee;
+        --ink: #1f1f1f;
+        --muted: rgba(0,0,0,0.60);
+        --line: rgba(0, 0, 0, 0.08);
+      }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        background: var(--paper);
+        color: var(--ink);
+        font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+        -webkit-font-smoothing: antialiased;
+        text-rendering: optimizeLegibility;
+      }
+      a { color: inherit; text-decoration: none; }
+      .container { max-width: 980px; margin: 0 auto; padding: 0 24px; }
+
+      header {
+        position: sticky;
+        top: 0;
+        z-index: 50;
+        background: rgba(250, 248, 244, 0.86);
+        backdrop-filter: blur(10px);
+        border-bottom: 1px solid var(--line);
+      }
+      .nav {
+        height: 64px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 18px;
+      }
+      .brand {
+        font-family: "Cormorant Garamond", serif;
+        letter-spacing: 0.08em;
+        font-weight: 600;
+      }
+      .navlinks {
+        display: flex;
+        align-items: center;
+        gap: 18px;
+        font-size: 13px;
+        color: rgba(0,0,0,0.72);
+      }
+      .navlinks a { padding: 10px 6px; border-radius: 10px; }
+      .navlinks a:hover { background: rgba(0,0,0,0.04); }
+      .pill {
+        padding: 10px 14px;
+        border: 1px solid rgba(0,0,0,0.14);
+        border-radius: 999px;
+        font-size: 13px;
+        color: rgba(0,0,0,0.72);
+        background: rgba(255,255,255,0.4);
+      }
+      .pill:hover { background: rgba(255,255,255,0.7); }
+
+      .topPad { padding: 40px 0 24px; }
+      .back {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 13px;
+        color: rgba(0,0,0,0.62);
+        border: 1px solid rgba(0,0,0,0.12);
+        border-radius: 999px;
+        padding: 10px 14px;
+        background: rgba(255,255,255,0.35);
+      }
+      .back:hover { background: rgba(255,255,255,0.7); }
+
+      .hero {
+        padding: 10px 0 26px;
+      }
+      .title {
+        font-family: "Cormorant Garamond", serif;
+        font-weight: 500;
+        font-size: clamp(40px, 5vw, 66px);
+        line-height: 1.02;
+        margin: 18px 0 8px;
+        letter-spacing: -0.02em;
+      }
+      .meta {
+        color: rgba(0,0,0,0.55);
+        font-size: 12.5px;
+      }
+
+      .coverWrap {
+        margin-top: 18px;
+        border-radius: 18px;
+        overflow: hidden;
+        border: 1px solid rgba(0,0,0,0.10);
+        background: rgba(255,255,255,0.35);
+      }
+      .coverWrap img {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+
+      .content {
+        background: var(--paper-2);
+        border-top: 1px solid var(--line);
+        padding: 36px 0 72px;
+      }
+
+      .prose {
+        max-width: 760px;
+        margin: 0 auto;
+        font-size: 15px;
+        line-height: 1.9;
+        color: rgba(0,0,0,0.75);
+      }
+      .prose p { margin: 0 0 18px; }
+      .prose h2 {
+        font-family: "Cormorant Garamond", serif;
+        font-weight: 500;
+        color: rgba(0,0,0,0.92);
+        font-size: 26px;
+        margin: 32px 0 10px;
+      }
+      .prose blockquote {
+        margin: 26px 0;
+        padding: 14px 18px;
+        border-left: 3px solid rgba(0,0,0,0.18);
+        background: rgba(255,255,255,0.45);
+        border-radius: 12px;
+        color: rgba(0,0,0,0.70);
+      }
+
+      .state {
+        text-align: center;
+        color: rgba(0,0,0,0.58);
+        padding: 24px 0;
+      }
+
+      footer {
+        padding: 46px 0;
+        border-top: 1px solid var(--line);
+        color: rgba(0,0,0,0.60);
+        font-size: 12px;
+        background: var(--paper);
+      }
+      .footrow {
+        display: flex;
+        justify-content: space-between;
+        gap: 16px;
+        flex-wrap: wrap;
+        align-items: center;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <div class="container">
+        <div class="nav">
+          <a class="brand" href="index.html">LAMETT</a>
+
+          <nav class="navlinks">
+            <a href="products.html">Products</a>
+            <a href="inspiration.html">Inspiration</a>
+            <a href="information.html">Information and advice</a>
+            <a href="about.html">About Lamett</a>
+            <a href="showrooms.html">Showrooms</a>
+            <a class="pill" href="order-samples.html">Order Samples</a>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <div class="container topPad">
+      <a class="back" href="information.html">← Back to Information</a>
+
+      <section class="hero">
+        <div id="state" class="state">Loading article…</div>
+
+        <div id="article" style="display:none;">
+          <div class="meta" id="meta"></div>
+          <h1 class="title" id="title"></h1>
+
+          <div class="coverWrap" id="coverWrap" style="display:none;">
+            <img id="coverImg" alt="" />
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <section class="content">
+      <div class="container">
+        <div class="prose" id="prose"></div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container">
+        <div class="footrow">
+          <div>© <span id="year"></span> Lamett</div>
+          <div style="display:flex; gap:12px; flex-wrap:wrap;">
+            <a href="#" style="opacity:.75;">Privacy policy</a>
+            <a href="#" style="opacity:.75;">Cookie policy</a>
+            <a href="#" style="opacity:.75;">Accessibility Statement</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      const STRAPI_URL = "http://localhost:1337";
+
+      function escapeHtml(str) {
+        return String(str)
+          .replaceAll("&", "&amp;")
+          .replaceAll("<", "&lt;")
+          .replaceAll(">", "&gt;")
+          .replaceAll('"', "&quot;")
+          .replaceAll("'", "&#039;");
+      }
+
+      // 把 Strapi blocks 渲染成简单的 HTML（够用且稳）
+      function renderBlocks(blocks) {
+        if (!Array.isArray(blocks) || blocks.length === 0) return "<p>No content.</p>";
+
+        let html = "";
+        for (const b of blocks) {
+          const type = b?.type;
+
+          if (type === "heading") {
+            const text = (b.children || []).map(c => c?.text || "").join("");
+            html += `<h2>${escapeHtml(text || "")}</h2>`;
+            continue;
+          }
+
+          if (type === "quote") {
+            const text = (b.children || []).map(c => c?.text || "").join("");
+            html += `<blockquote>${escapeHtml(text || "")}</blockquote>`;
+            continue;
+          }
+
+          // 默认 paragraph
+          const text = (b?.children || []).map(c => c?.text || "").join("");
+          if (text.trim()) html += `<p>${escapeHtml(text)}</p>`;
+        }
+        return html || "<p>No content.</p>";
+      }
+
+      function getQueryParam(name) {
+        const u = new URL(window.location.href);
+        return u.searchParams.get(name);
+      }
+
+      async function loadArticle() {
+        const id = getQueryParam("id");
+        const state = document.getElementById("state");
+        const articleEl = document.getElementById("article");
+        const titleEl = document.getElementById("title");
+        const metaEl = document.getElementById("meta");
+        const proseEl = document.getElementById("prose");
+        const coverWrap = document.getElementById("coverWrap");
+        const coverImg = document.getElementById("coverImg");
+
+        if (!id) {
+          state.textContent = "Missing article id. Open from Information page.";
+          proseEl.innerHTML = "<p>Please go back and click an article card.</p>";
+          return;
+        }
+
+        try {
+          const url = `${STRAPI_URL}/api/articles/${encodeURIComponent(id)}?populate=cover`;
+          const res = await fetch(url, { headers: { "Accept": "application/json" } });
+
+          if (!res.ok) throw new Error(`Request failed: ${res.status} ${res.statusText}`);
+
+          const json = await res.json();
+          const a = json?.data?.attributes;
+
+          if (!a) throw new Error("Article not found.");
+
+          // Title + meta
+          const title = a.title || "Untitled";
+          titleEl.textContent = title;
+
+          const created = a.createdAt ? new Date(a.createdAt) : null;
+          metaEl.textContent = created
+            ? `ARTICLE · ${created.toLocaleDateString(undefined, { year: "numeric", month: "long", day: "numeric" })}`
+            : "ARTICLE";
+
+          // Cover
+          const cover = a.cover?.data?.attributes;
+          if (cover?.url) {
+            coverImg.src = STRAPI_URL + cover.url;
+            coverImg.alt = title;
+            coverWrap.style.display = "";
+          } else {
+            coverWrap.style.display = "none";
+          }
+
+          // Content
+          proseEl.innerHTML = renderBlocks(a.content);
+
+          state.style.display = "none";
+          articleEl.style.display = "";
+
+          document.title = `${title} — LAMETT`;
+
+        } catch (err) {
+          const msg = (err && err.message) ? err.message : String(err);
+          state.textContent = "Couldn’t load article.";
+          proseEl.innerHTML = `
+            <p>${escapeHtml(msg)}</p>
+            <p style="opacity:.85;">
+              如果是 403 Forbidden：去 Strapi 后台 → Settings → Users & Permissions Plugin → Roles → Public，
+              勾选 Article 的 <b>find</b> / <b>findOne</b>，保存后刷新。
+            </p>
+          `;
+        }
+      }
+
+      document.getElementById("year").textContent = new Date().getFullYear();
+      loadArticle();
+    </script>
+  </body>
+</html>

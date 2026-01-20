@@ -1,6 +1,6 @@
 export default ({ env }) => ({
-  host: env('HOST', '0.0.0.0'),
-  port: env.int('PORT', 1337),
+  host: '127.0.0.1', // 强制 IPv4
+  port: 1337,
   app: {
     keys: env.array('APP_KEYS'),
   },
