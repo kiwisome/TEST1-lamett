@@ -470,7 +470,7 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
 export interface ApiArticleArticle extends Struct.CollectionTypeSchema {
   collectionName: 'articles';
   info: {
-    displayName: '\u6587\u7AE0';
+    displayName: 'Article';
     pluralName: 'articles';
     singularName: 'article';
   };
