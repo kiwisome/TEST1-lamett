@@ -7,11 +7,5 @@ export default [
   'strapi::query',
   'strapi::body',
   'strapi::session',
-  {
-    name: 'strapi::favicon',
-    config: {
-      path: './public/favicon.ico',
-    },
-  },
   'strapi::public',
 ];
