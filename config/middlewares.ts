@@ -9,9 +9,7 @@ export default [
   'strapi::session',
   {
     name: 'strapi::favicon',
-    config: {
-      path: './public/favicon.ico',
-    },
+    config: { path: '/favicon.ico' },
   },
   'strapi::public',
 ];
